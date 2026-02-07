@@ -1,0 +1,15 @@
+
+
+
+
+
+I want to display the no.of people registered for the event organised by an organizer and i also want
+to display the events registered by a participant so to achieve this i want to know who is organizer
+and who is participant so for this in the signup itself i want to take the input from the user using
+radio button and i have a concept of user_groups in the django db in which i can have different
+types of users so i can seperate them into groups so for this i though to create them according to the
+radio button i want to seperate them and save into groups but here comes a concept called signals
+
+signals can be used to do the operations whenever a req is received.... but to work with signals it 
+only works with instance that is instance of User so the fields in the instance can only be used 
+so for that iam creating a role field in the user table using the model check the model's class for role creation i need to extend the user also look into settings AUTH_USER_MODEL

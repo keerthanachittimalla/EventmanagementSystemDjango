@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Organizer Form</title>
+    {%include "includes.html"%}
+    <!--<link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet"> !-->
+</head>
+<body>
+    {%include "basenavbar.html"%}
+    <div class="container mt-2">
+        <h2 class="mb-4">Event Organizer Form</h2>
+        <form action="eventdata" method="post">
+            {% csrf_token %}
+            <div class="form-group">
+                <label for="eventId">Event ID</label>
+                <input type="text" class="form-control" id="eventId" name="eventId" placeholder="Enter event ID">
+            </div>
+            <div class="form-group">
+                <label for="eventName">Event Name</label>
+                <input type="text" class="form-control" id="eventName" name="eventName" placeholder="Enter event name">
+            </div>
+            <div class="form-group">
+                <label for="eventLocation">Event Location</label>
+                <input type="text" class="form-control" id="eventLocation" name="eventLocation" placeholder="Enter event location">
+            </div>
+            <div class="form-group">
+                <label for="eventImage">Event Image</label>
+                <input type="file" class="form-control-file" id="eventImage" name="eventImage">
+            </div>
+            <div class="form-group">
+                <label for="eventTime">Event Time</label>
+                <input type="time" class="form-control" id="eventTime" name="eventTime">
+            </div>
+            <div class="form-group">
+                <label for="eventDate">Event Date</label>
+                <input type="date" class="form-control" id="eventDate" name="eventDate">
+            </div>
+            <div class="form-group">
+                <label for="eventCost">Event Cost</label>
+                <input type="number" class="form-control" id="eventCost" name="eventCost" placeholder="Enter event cost">
+            </div>
+            <div class="form-group">
+                <label for="organizerInfo">Organizer Info</label>
+                <textarea class="form-control" id="organizerInfo" name="organizerInfo" rows="3" placeholder="Enter organizer info"></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+
+    <!--<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>!-->
+</body>
+</html>

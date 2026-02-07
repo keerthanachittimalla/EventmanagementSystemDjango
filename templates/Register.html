@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+
+<div class="container mt-5">
+    <h2 class="mb-4">Registration Form</h2>
+    <form action="#" method="POST" enctype="multipart/form-data">
+        {% csrf_token %} <!-- If using Django, otherwise remove this line -->
+        
+        <div class="form-group">
+            <label for="fullname">Full Name</label>
+            <input type="text" class="form-control" id="fullname" name="fullname" required>
+        </div>
+        
+        <div class="form-group">
+            <label for="rollno">Roll Number</label>
+            <input type="text" class="form-control" id="rollno" name="rollno" required>
+        </div>
+        
+        <div class="form-group">
+            <label for="branch">Branch</label>
+            <input type="text" class="form-control" id="branch" name="branch" required>
+        </div>
+        
+        <div class="form-group">
+            <label for="section">Section</label>
+            <input type="text" class="form-control" id="section" name="section" required>
+        </div>
+        
+        <div class="form-group">
+            <label for="department">Department</label>
+            <input type="text" class="form-control" id="department" name="department" required>
+        </div>
+        
+        <div class="form-group">
+            <label for="phonenumber">Phone Number</label>
+            <input type="tel" class="form-control" id="phonenumber" name="phonenumber" required>
+        </div>
+        
+        <div class="form-group">
+            <label for="payment_screenshot">Upload Payment Screenshot</label>
+            <input type="file" class="form-control-file" id="payment_screenshot" name="payment_screenshot" required>
+        </div>
+        
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</div>
+
+<!-- Bootstrap JS and dependencies -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

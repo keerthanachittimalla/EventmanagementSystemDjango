@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Details</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    {%include "basenavbar.html"%}
+    <div class="container mt-5">
+        {%for event in events%}
+        <form method="post" action="proceedtopay"> <!--action="{% url 'proceedtopay' %"> -->
+            {%csrf_token%}
+        <div class="card">
+           <!-- <img src="{{ event.event_image.url }}" class="card-img-top" alt="{{ event.event_name }}"> -->
+            <div class="card-body">
+                <h1 class="card-title" name="eventname">{{ event.event_Name }}</h1>
+                <p class="card-text">
+                    <strong>Location:</strong>{{ event.event_Location }}<br>
+                    <strong>Date:</strong> {{ event.event_Date }}<br>
+                    <strong>Time:</strong> {{ event.event_Time }}<br>
+                    <strong>Price:</strong> ${{ event.event_Price }}<br>
+                    <strong>Organizerid:</strong>{{event.organizerid}}<br>
+                    <strong>Organizer Info:</strong> {{ event.event_orginfo }}<br>
+                    <!--<a href="proceedtopay"><i>Proceed!</i></a>-->
+                    <input type="hidden" name="eventname" value="{{ event.event_Name }}">
+                        <input type="hidden" name="eventlocation" value="{{ event.event_Location }}">
+                        <input type="hidden" name="eventdate" value="{{ event.event_Date }}">
+                        <input type="hidden" name="eventtime" value="{{ event.event_Time }}">
+                        <input type="hidden" name="eventid" value="{{ event.event_Id }}">
+                        <input type="hidden" name="organizerid" value="{{event.organizerid}}">
+                        <input type="hidden" name="eventorginfo" value="{{ event.event_orginfo }}">
+                        <input type="hidden" name="username" value="{{user.username}}">
+                        <input type="hidden" name="userid" value="{{user.id}}">
+                    <button>proceed</button>
+                </p>
+            </div>
+        </div>
+        </form>
+        {%endfor%}
+    </div>
+    
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,18 @@
+<html>
+    <body>
+        <form  action="register">
+            {%csrf_token%}
+            {%if user.is_authenticated%} 
+            <h1>payment gate way</h1>
+            <h1>for now adding info in db</h1>
+            {% else %}
+            <h1>If account exists</h1>
+            <a href="{% url 'login' %}">Login</a>
+            <h1>Otherwise Signup</h1>
+            <a href="{%url 'signup' %}">Signup</a>
+            {%endif%}
+            <input type="submit">
+        </form>
+
+    </body>
+</html>
